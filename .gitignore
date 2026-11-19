@@ -1,0 +1,15 @@
+# PlatformIO build output and downloaded libraries
+.pio/
+
+# Editor / IDE (PlatformIO VS Code extension generates these)
+.vscode/
+!.vscode/extensions.json
+*.code-workspace
+
+# Python
+__pycache__/
+*.pyc
+
+# OS cruft
+.DS_Store
+Thumbs.db
