@@ -4,6 +4,23 @@ A standalone Wi-Fi message board for a **Wemos D1 Mini (ESP8266)** and a **4-in-
 
 The board creates its own Wi-Fi access point. It needs no router and no internet. Join its network from your phone, and a captive portal opens the control page. From there you can change the message, brightness, scroll speed and display mode. Settings are saved to flash and restored after a power cycle.
 
+## Screenshot
+
+<p align="center">
+  <img src="docs/images/web-ui.png" alt="MatrixBoard control page: message 'Hello from the D1 Mini!', Scroll mode selected, brightness 8, scroll speed 6, with 'Saved ✓' confirmation under the Update display button" width="320">
+</p>
+
+This is the control page after typing a message, choosing **Scroll**, setting brightness to 8 and speed to 6, then pressing **Update display**. The board applies the change at once and replies with the saved state, and the page then shows **Saved ✓**.
+
+The screenshot was taken with the [mock server](#testing-the-web-page-without-hardware), which prints what the matrix would show for each update:
+
+```
+[web] POST /set ['bri', 'mode', 'msg', 'spd']
+  ┌──────────────────────────────────┐
+  │ Hello from the D1 Mini!          │  SCROLL 76ms/frame
+  └──────────────────────────────────┘  bri  8 [#########.......]
+```
+
 ## Features
 
 - **Standalone SoftAP.** No external network required. The control page is served at `192.168.4.1`.
@@ -164,6 +181,7 @@ The board then appears in WSL as `/dev/ttyUSB*`, and `pio run -t upload` finds i
 ## Project layout
 
 ```
+├── docs/images/web-ui.png    # README screenshot of the control page
 ├── platformio.ini            # build envs: d1_mini (default) and diag
 ├── src/
 │   ├── main.cpp              # firmware: AP, captive portal, web UI, display, persistence
