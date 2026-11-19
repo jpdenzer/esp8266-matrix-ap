@@ -1,5 +1,9 @@
 # esp8266-matrix-ap
 
+<p align="center">
+  <img src="docs/images/matrixboard.jpg" alt="The finished MatrixBoard: a 32×8 red LED matrix in a red 3D-printed case, scrolling a message" width="800">
+</p>
+
 A standalone Wi-Fi message board for a **Wemos D1 Mini (ESP8266)** and a **4-in-1 MAX7219 32×8 LED matrix**.
 
 The board creates its own Wi-Fi access point. It needs no router and no internet. Join its network from your phone, and a captive portal opens the control page. From there you can change the message, brightness, scroll speed and display mode. Settings are saved to flash and restored after a power cycle.
@@ -181,7 +185,7 @@ The board then appears in WSL as `/dev/ttyUSB*`, and `pio run -t upload` finds i
 ## Project layout
 
 ```
-├── docs/images/web-ui.png    # README screenshot of the control page
+├── docs/images/              # README photo and control-page screenshot
 ├── platformio.ini            # build envs: d1_mini (default) and diag
 ├── src/
 │   ├── main.cpp              # firmware: AP, captive portal, web UI, display, persistence
